@@ -3,191 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise3D | Custom Printing & Materials</title>
+    <title>Enterprise3D | Manufacturing Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .portfolio-card:hover .overlay { opacity: 1; }
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+    <nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold tracking-tight">ENTERPRISE<span class="text-blue-400">3D</span></h1>
-            <div class="space-x-6 flex items-center">
-                <a href="#services" class="hover:text-blue-400">Services</a>
-                <a href="#materials" class="hover:text-blue-400">Materials</a>
-                <button onclick="toggleCart()" class="relative bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-500 transition">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            <h1 class="text-2xl font-bold tracking-tighter">ENTERPRISE<span class="text-blue-400">3D</span></h1>
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>
+                <a href="#services" class="hover:text-blue-400 transition">Custom Quote</a>
+                <a href="#materials" class="hover:text-blue-400 transition">Materials</a>
+                <button onclick="toggleCart()" class="relative bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-500 transition shadow-lg">
+                    <i class="fas fa-shopping-cart mr-2"></i>Cart
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-white text-blue-900 text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center border-2 border-blue-600">0</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <header class="bg-slate-800 text-white py-20 px-4 text-center">
-        <h2 class="text-5xl font-extrabold mb-4">Precision Manufacturing, On Demand.</h2>
-        <p class="text-xl text-gray-300 mb-8">Industrial grade materials and custom 3D printing solutions for your enterprise.</p>
-        <a href="#materials" class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition">Browse Materials</a>
+    <header class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-24 px-4 text-center">
+        <h2 class="text-5xl md:text-6xl font-black mb-6">Industrial 3D Printing <br><span class="text-blue-400">Perfected.</span></h2>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10">We bridge the gap between digital design and physical reality with aerospace-grade materials and rapid prototyping.</p>
+        <div class="flex justify-center gap-4">
+            <a href="#services" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-bold transition">Start a Project</a>
+            <a href="#portfolio" class="bg-transparent border border-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-bold transition">View Our Work</a>
+        </div>
     </header>
 
-    <section id="services" class="container mx-auto py-16 px-4">
-        <h3 class="text-3xl font-bold text-center mb-12">Submit a Custom Project</h3>
-        <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-100">
-            <form id="project-form" class="space-y-4">
-                <div>
-                    <label class="block mb-1 font-semibold">Project Name</label>
-                    <input type="text" id="proj-name" class="w-full border p-2 rounded" placeholder="e.g. Gear Prototype v2" required>
-                </div>
-                <div>
-                    <label class="block mb-1 font-semibold">Material Preference</label>
-                    <select id="proj-material" class="w-full border p-2 rounded">
-                        <option>Carbon Fiber Nylon</option>
-                        <option>Industrial PLA</option>
-                        <option>TPU (Flexible)</option>
-                        <option>Resin (High Detail)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block mb-1 font-semibold">Upload Blueprint (Link to STL/OBJ)</label>
-                    <input type="url" id="proj-link" class="w-full border p-2 rounded" placeholder="https://dropbox.com/your-file-link" required>
-                    <p class="text-xs text-gray-500 mt-1">*For GitHub.io, please provide a public link to your design file.</p>
-                </div>
-                <button type="submit" class="w-full bg-slate-900 text-white py-3 rounded font-bold hover:bg-slate-800 transition">Add Project to Quote</button>
-            </form>
+    <section id="portfolio" class="container mx-auto py-20 px-4">
+        <div class="text-center mb-16">
+            <h3 class="text-4xl font-bold mb-4">Previous Projects</h3>
+            <p class="text-gray-500">A showcase of engineering excellence and custom manufacturing.</p>
         </div>
-    </section>
-
-    <section id="materials" class="bg-gray-100 py-16 px-4">
-        <div class="container mx-auto">
-            <h3 class="text-3xl font-bold text-center mb-12">Industrial Materials</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="PLA" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold">Standard PLA Poly</h4>
-                        <p class="text-gray-600 mb-4">High precision, biodegradable, and available in 20+ colors.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-blue-600">$25.00/kg</span>
-                            <button onclick="addToCart('Standard PLA', 25.00)" class="bg-slate-900 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=500&q=80" alt="Resin" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold">Tough Resin</h4>
-                        <p class="text-gray-600 mb-4">Ideal for engineering prototypes and high-stress components.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-blue-600">$85.00/L</span>
-                            <button onclick="addToCart('Tough Resin', 85.00)" class="bg-slate-900 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=500&q=80" alt="Nylon" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold">Carbon Fiber Nylon</h4>
-                        <p class="text-gray-600 mb-4">Extreme strength-to-weight ratio for aerospace parts.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-blue-600">$120.00/kg</span>
-                            <button onclick="addToCart('CF Nylon', 120.00)" class="bg-slate-900 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Add to Cart</button>
-                        </div>
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="portfolio-card relative overflow-hidden rounded-xl h-64 shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                <div class="overlay absolute inset-0 bg-slate-900/80 opacity-0 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300">
+                    <h4 class="text-xl font-bold">Drone Chassis</h4>
+                    <p class="text-sm text-center">Material: Carbon Fiber Nylon</p>
+                    <span class="mt-4 px-3 py-1 bg-blue-600 rounded-full text-xs">Aero-Sector</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-[60] p-6">
-        <div class="flex justify-between items-center mb-8">
-            <h4 class="text-2xl font-bold">Your Cart</h4>
-            <button onclick="toggleCart()" class="text-gray-500 hover:text-black text-2xl">&times;</button>
-        </div>
-        <div id="cart-items" class="space-y-4 mb-8 max-h-[60vh] overflow-y-auto">
+            <div class="portfolio-card relative overflow-hidden rounded-xl h-64 shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                <div class="overlay absolute inset-0 bg-slate-900/80 opacity-0 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300">
+                    <h4 class="text-xl font-bold">Engine Housing</h4>
+                    <p class="text-sm text-center">Material: Industrial PLA+</p>
+                    <span class="mt-4 px-3 py-1 bg-blue-600 rounded-full text-xs">Automotive</span>
+                </div>
             </div>
-        <div class="border-t pt-4">
-            <div class="flex justify-between font-bold text-xl mb-6">
-                <span>Total:</span>
-                <span id="cart-total">$0.00</span>
+            <div class="portfolio-card relative overflow-hidden rounded-xl h-64 shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                <div class="overlay absolute inset-0 bg-slate-900/80 opacity-0 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300">
+                    <h4 class="text-xl font-bold">Prosthetic Hand</h4>
+                    <p class="text-sm text-center">Material: Tough Resin</p>
+                    <span class="mt-4 px-3 py-1 bg-blue-600 rounded-full text-xs">Medical</span>
+                </div>
             </div>
-            <button onclick="checkout()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition">Request Quote / Checkout</button>
-        </div>
-    </div>
-
-    <script>
-        let cart = JSON.parse(localStorage.getItem('printShopCart')) || [];
-
-        function updateCartUI() {
-            const container = document.getElementById('cart-items');
-            const count = document.getElementById('cart-count');
-            const total = document.getElementById('cart-total');
-            
-            container.innerHTML = '';
-            let totalValue = 0;
-
-            cart.forEach((item, index) => {
-                totalValue += item.price;
-                container.innerHTML += `
-                    <div class="flex justify-between items-center bg-gray-50 p-3 rounded">
-                        <div>
-                            <p class="font-bold text-sm">${item.name}</p>
-                            <p class="text-xs text-gray-500">${item.details || ''}</p>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="font-semibold text-blue-600">$${item.price}</span>
-                            <button onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-600 text-xs"><i class="fas fa-trash"></i></button>
-                        </div>
-                    </div>
-                `;
-            });
-
-            count.innerText = cart.length;
-            total.innerText = `$${totalValue.toFixed(2)}`;
-            localStorage.setItem('printShopCart', JSON.stringify(cart));
-        }
-
-        function addToCart(name, price, details = 'Standard material order') {
-            cart.push({ name, price, details });
-            updateCartUI();
-            if(!document.getElementById('cart-sidebar').classList.contains('translate-x-full')) return;
-            toggleCart();
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function toggleCart() {
-            const sidebar = document.getElementById('cart-sidebar');
-            sidebar.classList.toggle('translate-x-full');
-        }
-
-        // Handle Custom Project Form
-        document.getElementById('project-form').onsubmit = (e) => {
-            e.preventDefault();
-            const name = document.getElementById('proj-name').value;
-            const mat = document.getElementById('proj-material').value;
-            const link = document.getElementById('proj-link').value;
-            
-            addToCart(`Custom: ${name}`, 0, `Material: ${mat} | File: ${link}`);
-            alert("Project added! Please note: Custom project pricing will be calculated upon review.");
-            e.target.reset();
-        };
-
-        function checkout() {
-            if(cart.length === 0) return alert("Your cart is empty.");
-            
-            let orderDetails = "Order Request:\n\n";
-            cart.forEach(item => {
-                orderDetails += `- ${item.name}: $${item.price} (${item.details})\n`;
-            });
-            
-            const mailtoLink = `mailto:sales@your-enterprise.com?subject=New 3D Print Order&body=${encodeURIComponent(orderDetails)}`;
-            window.location.href = mailtoLink;
-        }
-
-        // Initialize UI on load
-        updateCartUI();
-    </script>
-</body>
-</html>
+            <div class="portfolio-card relative overflow-hidden rounded-xl h-64 shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4bcc0?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                <div class="overlay absolute inset-0 bg-slate-900/80 opacity-0 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300">
+                    <h4 class="text-xl font-bold">Architecture Model</h4>
+                    <p class="text-sm text-center">Scale: 1:500 (PLA)</p>
+                    <span class="mt-4 px-3 py-1 bg-blue-600 rounded-full text-xs">
